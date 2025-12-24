@@ -1,3 +1,8 @@
+<button id="startBtn">✨ Comenzar regalo</button>
+
+<audio id="music" loop>
+  <source src="musica/nunca-lo-olvides.mp3" type="audio/mpeg">
+</audio>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,6 +11,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+  #startBtn {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 40px;
+  font-size: 1.4em;
+  background: linear-gradient(45deg, #c40000, #ff4d4d);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255,0,0,0.6);
+  z-index: 9999;
+  transition: transform 0.3s;
+}
+
+#startBtn:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+<script>
+  const btn = document.getElementById("startBtn");
+  const music = document.getElementById("music");
+
+  music.volume = 0.15; // suave, romántico
+
+  btn.addEventListener("click", () => {
+    music.play();
+    btn.style.display = "none";
+  });
+</script>
+
 body{
   margin:0;
   font-family:'Georgia',serif;
@@ -216,3 +253,4 @@ for(let i=0;i<45;i++){
 
 </body>
 </html>
+
